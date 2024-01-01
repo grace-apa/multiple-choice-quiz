@@ -26,4 +26,14 @@ const questions = [
       { text: "4. All of the above", correct: true },
     ],
   },
+  {
+    question:
+      "String values must be enclosed within_____ when being assigned to variables.",
+    answers: [
+      { text: "1. Commas", correct: false },
+      { text: "2. Curly brackets", correct: false },
+      { text: "3. Quotes", correct: true },
+      { text: "4. Parenthesis", correct: true },
+    ],
+  },
 ];
