@@ -33,7 +33,17 @@ const questions = [
       { text: "1. Commas", correct: false },
       { text: "2. Curly brackets", correct: false },
       { text: "3. Quotes", correct: true },
-      { text: "4. Parenthesis", correct: true },
+      { text: "4. Parenthesis", correct: false },
+    ],
+  },
+  {
+    question:
+      "A very useful tool used during development and debugging for printing content to the debugger is:",
+    answers: [
+      { text: "1. JavaScript", correct: false },
+      { text: "2. Terminal/Bash", correct: false },
+      { text: "3. For loops", correct: false },
+      { text: "4. Console.log", correct: true },
     ],
   },
 ];
