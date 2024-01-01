@@ -68,11 +68,11 @@ function showQuestion() {
 
 currentQuestion.answers.forEach((answers) => {
   const button = document.createElement("button");
-  button.innerHTML = answers.text;
+  button.innerHTML = answer.text;
   button.classList.add("choices");
   answersButtons.appendChild(button);
   if (answers.correct) {
-    button.dataset.correct = answers.correct;
+    button.dataset.correct = answer.correct;
     button.addEventListener("click", selectAnswer);
   }
 });
@@ -80,8 +80,10 @@ currentQuestion.answers.forEach((answers) => {
 function selectAnswer(e) {
   const selectedChoices = e.target;
   const isCorrect = selectedChoices.dataset.correct === "true";
+
   if (isCorrect) {
     selectedChoices.classList.add("correct");
+    score++;
   } else {
     selectedChoices.classList.add("incorrect");
   }
@@ -94,4 +96,27 @@ function selectAnswer(e) {
   nextButton.style.display = "block";
 }
 
+function showScore() {
+  questionsElement.innerHTML =
+    "You scored ${score} out of ${questions.length}!";
+  nextButton.innerHTML = "Play again";
+  nextButton.style.display = "block";
+}
+
+function handleNextButton() {
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    showQuestion();
+  } else {
+    showScore();
+  }
+}
+
+nextButton.addEventListener("click", () => {
+  if (currentQuestionIndex < questions.length) {
+    handleNextButton();
+  } else {
+    startQuiz();
+  }
+});
 startQuiz();
