@@ -48,9 +48,8 @@ const questions = [
   },
 ];
 
-const questionsElement = document.getElementById("questions-title");
+const questionsElement = document.getElementById("question-title");
 const answerButton = document.getElementById("choices");
-
 let currentQuestionIndex = 0;
 let score = 0;
 
@@ -86,6 +85,13 @@ function selectAnswer(e) {
   } else {
     selectedChoices.classList.add("incorrect");
   }
+  Array.from(answerButtons.children).forEach((button) => {
+    if (button.dataset.correct === "true") {
+      button.classList.add("correct");
+    }
+    button.disabled = true;
+  });
+  nextButton.style.display = "block";
 }
 
 startQuiz();
