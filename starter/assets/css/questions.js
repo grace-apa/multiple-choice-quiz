@@ -89,4 +89,3 @@ function selectAnswer(e) {
 }
 
 startQuiz();
-showQuestion();
