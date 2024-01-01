@@ -50,3 +50,42 @@ const questions = [
 
 const questionsElement = document.getElementById("questions-title");
 const answerButton = document.getElementById("choices");
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+function startQuiz() {
+  currentQuestionIndex = 0;
+  score = 0;
+  nextButton.innerHTML = "Next";
+  showQuestion();
+}
+
+function showQuestion() {
+  let currentQuestion = questions[currentQuestionIndex];
+  let questionsNo = currentQuestionIndex + 1;
+  questionsElement.innerHTML = questionsNo + ". " + currentQuestion.questions;
+}
+
+currentQuestion.answers.forEach((answers) => {
+  const button = document.createElement("button");
+  button.innerHTML = answers.text;
+  button.classList.add("choices");
+  answersButtons.appendChild(button);
+  if (answers.correct) {
+    button.dataset.correct = answers.correct;
+    button.addEventListener("click", selectAnswer);
+  }
+});
+
+function selectAnswer(e) {
+  const selectedChoices = e.target;
+  const isCorrect = selectedChoices.dataset.correct === "true";
+  if (isCorrect) {
+    selectedChoices.classList.add("correct");
+  } else {
+    selectedChoices.classList.add("incorrect");
+  }
+}
+
+startQuiz();
