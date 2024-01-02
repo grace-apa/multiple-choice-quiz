@@ -2,25 +2,34 @@
 
 ## Description
 
-As you proceed in your journey to becoming a front-end web developer, it’s likely that you’ll be asked to complete a coding assessment, perhaps as part of an interview process. A typical coding assessment is a combination of multiple-choice questions and interactive coding challenges.
+A multiple-choice coding challenge.
 
-To help you become familiar with these tests and give you a chance to apply the skills from this module, this week’s challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. This week’s coursework has taught you all the skills you need to succeed in this challenge.
+In this week’s challenge I had to build a timed coding quiz with multiple-choice questions. This app features dynamically updated HTML and CSS powered by JavaScript code. This timed quiz also stores high scores.
 
-## User Story
-
-AS A coding boot camp student I want to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-
-Create a code quiz that contains the following requirements:
+This quiz includes the following features:
 
 - A start button that when clicked a timer starts and the first question appears.
 
-  - Questions contain buttons for each answer.
-  -
-  - When answer is clicked, the next question appears
-  -
-  - If the answer clicked was incorrect then subtract time from the clock
+  - Questions that contain buttons for each answer.
 
-- The quiz should end when all questions are answered or the timer reaches 0.
+  - When an answer is clicked, the next question appears.
 
-  - When the game ends, it should display their score and give the user the ability to save their initials and their score
+  - If the answer clicked is incorrect, it subtracts time from the clock.
+
+- The quiz ends when all questions are answered or the timer reaches 0.
+
+  - When the game ends, it should display the users score and give the user the ability to save their initials and their score.
+
+## License
+
+MIT License
+
+## Badges
+
+- HTML
+- CSS
+- JavaScript
+
+## Tests
+
+N/A
