@@ -1,6 +1,6 @@
 const questions = [
   {
-    questions: "Commonly used data types DO not include:",
+    question: "Commonly used data types DO not include:",
     answers: [
       { text: "1. Strings", correct: false },
       { text: "2. Booleans", correct: false },
@@ -9,7 +9,7 @@ const questions = [
     ],
   },
   {
-    questions: "The condition in an if/else statement is enclosed with ______.",
+    question: "The condition in an if/else statement is enclosed with ______.",
     answers: [
       { text: "1. Quotes", correct: false },
       { text: "2. Curly brackets", correct: false },
@@ -18,7 +18,7 @@ const questions = [
     ],
   },
   {
-    questions: "Arrays in JavaScript can be used to store_____.",
+    question: "Arrays in JavaScript can be used to store_____.",
     answers: [
       { text: "1. Numbers and strings", correct: false },
       { text: "2. Other arrays", correct: false },
@@ -27,7 +27,7 @@ const questions = [
     ],
   },
   {
-    questions:
+    question:
       "String values must be enclosed within_____ when being assigned to variables.",
     answers: [
       { text: "1. Commas", correct: false },
@@ -37,7 +37,7 @@ const questions = [
     ],
   },
   {
-    questions:
+    question:
       "A very useful tool used during development and debugging for printing content to the debugger is:",
     answers: [
       { text: "1. JavaScript", correct: false },
