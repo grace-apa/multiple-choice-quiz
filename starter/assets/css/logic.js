@@ -1,26 +1,21 @@
-const startButton = document.getElementById("start");
-const questionsScreen = document.getElementById("questions");
+function startGame() {}
 
-startButton.addEventListener("click", startQuiz);
+function setNextQuestion() {}
 
-function startQuiz() {
-  console.log('Started')
-  startButton.classList.add('hide')
-  questionsScreen.classList.remove('hide')
-  setNextQuestion()
-  // const startScreen = document.getElementById("start-screen");
-  // startScreen.style.display = "none";
-  // const questionsScreen = document.getElementById("questions");
-  // questions.style.display = "flex";
-  // questionsScreen.classList.remove("hide");
-  // showQuestion();
-}
+function selectAnswer() {}
 
-function setNextQuestion()
+// First code:
 
+// const startButton = document.getElementById("start");
+// // const questionsScreen = document.getElementById("questions");
 
+// function startQuiz() {
+//   const startScreen = document.getElementById("start-screen");
+//   startScreen.style.display = "none";
+//   const questionsScreen = document.getElementById("questions");
+//   questions.style.display = "flex";
+//   questionsScreen.classList.remove("hide");
+//   showQuestion();
+// }
 
-
-
-
-
+// startButton.addEventListener("click", startQuiz);
