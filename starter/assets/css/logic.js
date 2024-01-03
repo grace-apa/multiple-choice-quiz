@@ -3,41 +3,27 @@ const questionElement = document.getElementById("questions");
 const questionTitle = document.getElementById("question-title");
 const answerList = document.getElementById("choices");
 const nextButton = document.getElementById("next-btn");
+const endscreenElement = document.getElementById("end-screen");
+const counterTime = document.querySelector(".count");
+let highScore = 0;
 
 let currentQuestionIndex = 0;
 
 startContainer.addEventListener("click", startGame);
 
-// have a timer function making use of the setInterval in js
 let timer;
-let seconds = 0;
-
-function startTimer() {
-  timer = setInterval(function () {
-    seconds--;
-    console.log(seconds);
-
-    if (seconds <= 0) {
-      clearInterval(timer);
-      console.log("Time's up!");
-    }
-  }, 1000);
-}
+let count;
 
 function stopTimer() {
   clearInterval(timer);
 }
 
-startTimer();
-
-// clearInterval() to stop the timer whe time hits 0
-
 function startGame() {
+  count = 60;
   startContainer.classList.add("hide");
   questionElement.classList.remove("hide");
-
   setNextQuestion();
-  // call the timer function in here
+  startTimer();
 }
 
 function setNextQuestion() {
@@ -45,6 +31,18 @@ function setNextQuestion() {
   showQuestion();
 }
 
+function startTimer() {
+  timer = setInterval(function () {
+    count--;
+    counterTime.textContent = count;
+    console.log("time remaining", count);
+    if (count === 0) {
+      clearInterval(timer);
+      window.alert("Time's up!");
+      finishGame();
+    }
+  }, 1000);
+}
 function showQuestion() {
   questionTitle.innerText = questions[currentQuestionIndex].question;
   questions[currentQuestionIndex].answers.forEach((answer) => {
@@ -59,13 +57,19 @@ function showQuestion() {
 
 function selectAnswer(event) {
   if (event.target.dataset.correct === "true") {
+    highScore += 5;
     currentQuestionIndex++;
     setNextQuestion();
+    // if (questions[4] === "true" || "false") {
+    //   console.log("Finished game");
+    //   finishGame();
   } else {
-    seconds -= 10;
-    if (seconds < 0) {
-      seconds = 0;
-    }
+    count -= 10;
     console.log("Wrong answer! 10 seconds deducted.");
+  }
+
+  function finishGame() {
+    localStorage.setItem("recentScore", highScore);
+    return (window.location.href = "finalPage.html");
   }
 }

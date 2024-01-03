@@ -13,6 +13,7 @@
     <div class="scores"><a href="highscores.html">View Highscores</a></div>
 
     <div class="timer">Time: <span id="time">0</span></div>
+    <!-- <div id="time">60</div> -->
 
     <div class="wrapper">
       <div id="start-screen" class="start">
@@ -27,12 +28,7 @@
 
       <div id="questions" class="hide">
         <h2 id="question-title"></h2>
-        <div id="choices" class="choices">
-          <!-- <button class="btn">Answer 1</button>
-          <button class="btn">Answer 2</button>
-          <button class="btn">Answer 3</button>
-          <button class="btn">Answer 4</button> -->
-        </div>
+        <div id="choices" class="choices"></div>
       </div>
       <div class="controls">
         <button id="next-btn" class="next-btn btn hide">Next</button>
@@ -48,6 +44,11 @@
       </div>
 
       <div id="feedback" class="feedback hide"></div>
+    </div>
+
+    <div>
+      <div class="count">60</div>
+      <h4>time remaining!</h4>
     </div>
 
     <script src="./assets/css/questions.js"></script>
